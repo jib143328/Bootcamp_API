@@ -17,6 +17,24 @@ class _ProductsScreenState extends State<ProductsScreen> {
       body: FutureBuilder(
           future:prodVM.getProducts() ,
           builder: (ctx,snapshot){
+            if(snapshot.connectionState==ConnectionState.done){
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                  itemBuilder: (ctx,index){
+                  return Container(
+                   child: Column(
+                     children: [
+                       Image.network(snapshot.data![index].image!),
+                       ListTile(title: Text(snapshot.data![index].title!),
+                         leading: CircleAvatar(child: Center(child: Text("${snapshot.data![index].price}"),),),
+                       ),
+                     ],
+                   ), 
+                  );
+              }
+              );
+            }
+
             return Center(child: CircularProgressIndicator(strokeAlign: 3,backgroundColor: Colors.deepOrangeAccent,));
           }
       ) ,
