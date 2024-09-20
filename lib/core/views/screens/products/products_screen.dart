@@ -1,5 +1,8 @@
 import 'package:dio_api/core/models/product.dart';
 import 'package:dio_api/core/view_models/products_vm.dart';
+import 'package:dio_api/core/views/screens/products/login_screen.dart';
+import 'package:dio_api/core/views/widgets/app_drawer.dart';
+import 'package:dio_api/core/views/widgets/button_rounded_container.dart';
 import 'package:flutter/material.dart';
 
 class ProductsScreen extends StatefulWidget {
@@ -15,6 +18,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
 
       body:
                ListView.builder(

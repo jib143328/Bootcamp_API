@@ -1,6 +1,8 @@
 import 'package:dio_api/core/views/screens/Todos/todos_screen.dart';
+import 'package:dio_api/core/views/screens/products/login_screen.dart';
 import 'package:dio_api/core/views/screens/products/products_screen.dart';
 import 'package:dio_api/core/views/screens/products/responsive_products_screen.dart';
+import 'package:dio_api/helpers/app_routes.dart';
 // import 'package:dio_api/core/views/screens/todos_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home:ResponsiveProductsScreen() ,
+   // home:LoginScreen() ,
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/login",
+      onGenerateRoute: AppRoutes.routeManager,
 
     );
   }

@@ -24,9 +24,10 @@ class _ResponsiveProductsScreenState extends State<ResponsiveProductsScreen> {
           if(snapshot.connectionState==ConnectionState.done)
             return LayoutBuilder(
                 builder: (ctx,constraint){
-              if(constraint.maxWidth<tabletSize)
-                return ProductsScreen(products: snapshot.data!,);
-                return ProductsTabletScreen(products: snapshot.data!);
+             if(constraint.maxWidth<tabletSize)
+               return ProductsScreen(products: snapshot.data!,);
+             return ProductsTabletScreen(products: snapshot.data!);
+
             }
             );
           else return Center(child: CircularProgressIndicator());
